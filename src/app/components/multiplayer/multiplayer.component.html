@@ -1,0 +1,34 @@
+<div class="game-board-container">
+    <div class="game-board">
+        <div *ngFor="let row of gameBoard">
+            <button *ngFor="let col of gameBoard" class="btn btn-light sqaure"
+                (click)="SetCellValue(row,col)">{{game.cellValue[row][col]}}</button>
+        </div>
+    </div>
+</div>
+<div class="game-status">
+    <div *ngIf="!win">
+        <h5>You : player {{playerRole}}</h5>
+    </div>
+    <span class="spacer"></span>
+    <div>
+        <ng-container *ngIf="win">
+            <h5>Player {{winner}} has won the game</h5>
+        </ng-container>
+        <ng-container *ngIf="!win && !gameFinished">
+            <h5>Turn : Player {{game.currentPlayer}}</h5>
+        </ng-container>
+        <ng-container *ngIf="gameFinished && !win">
+            <h5>Game draw</h5>
+        </ng-container>
+    </div>
+</div>
+<mat-divider></mat-divider>
+<div class="btn-reset">
+    <button mat-raised-button color="accent" (click)="ResetGame()">Reset Game</button>
+</div>
+<mat-divider></mat-divider>
+<div class="invite-friends">
+
+</div>
+<app-invite-friends></app-invite-friends>
