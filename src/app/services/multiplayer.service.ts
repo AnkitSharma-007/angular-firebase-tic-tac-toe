@@ -62,10 +62,4 @@ export class MultiplayerService {
     game.currentPlayer = 'X';
     return game;
   }
-
-  deleteGame(gameId: string) {
-    debugger;
-    console.log(gameId);
-    return this.db.doc('GameStatus/' + gameId).delete();
-  }
 }
