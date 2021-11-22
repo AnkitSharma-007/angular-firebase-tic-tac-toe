@@ -1,13 +1,21 @@
 <div class="home-container">
-    <img src="../../../assets/tic-tac-toe_demo.gif" alt="tic-tac-toe_demo">
+  <img src="../../../assets/tic-tac-toe_demo.gif" alt="tic-tac-toe_demo" />
 </div>
 <mat-divider></mat-divider>
 <div class="btn-container">
-    <button class="btn-new-game" mat-raised-button color="primary" [routerLink]="['/game',gamedto?.id]">New
-        Game</button>
+  <button
+    class="btn-new-game"
+    mat-raised-button
+    color="primary"
+    [routerLink]="['/game', gamedto?.id]"
+  >
+    New Game
+  </button>
 </div>
 <mat-divider></mat-divider>
 <div class="instruction">
-    <h5>Click on the button <fa-icon [icon]="faHandPointUp"></fa-icon> to start a new game of tic-tac-toe. Invite your
-        friend and enjoy a multiplayer game.</h5>
+  <h5>
+    Click on the button <fa-icon [icon]="faHandPointUp"></fa-icon> to start a
+    new game of tic-tac-toe. Invite your friend and enjoy a multiplayer game.
+  </h5>
 </div>
