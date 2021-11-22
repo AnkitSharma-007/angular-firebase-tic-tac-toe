@@ -39,10 +39,10 @@ const customConfig: ShareButtonsConfig = {
     NgMaterialModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'game/:gameid', component: MultiplayerComponent },
-      { path: '**', component: HomeComponent }
-    ])
+    { path: '', component: HomeComponent, pathMatch: 'full' },
+    { path: 'game/:gameid', component: MultiplayerComponent },
+    { path: '**', component: HomeComponent }
+], { relativeLinkResolution: 'legacy' })
 
   ],
   providers: [],
