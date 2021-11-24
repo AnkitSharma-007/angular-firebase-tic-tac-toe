@@ -2,10 +2,8 @@ import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
-import { AngularFireModule } from "@angular/fire";
-import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { HttpClientModule } from "@angular/common/http";
-
+import { AngularFireModule } from "@angular/fire/compat";
 import { environment } from "src/environments/environment";
 import { AppComponent } from "./app.component";
 import { MultiplayerComponent } from "./components/multiplayer/multiplayer.component";
@@ -17,6 +15,7 @@ import { ShareButtonsModule } from "ngx-sharebuttons/buttons";
 import { ShareButtonsConfig } from "ngx-sharebuttons";
 import { ShareIconsModule } from "ngx-sharebuttons/icons";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
+import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
 
 const customConfig: ShareButtonsConfig = {
   include: ["whatsapp", "telegram", "messenger", "line", "sms", "email"],
@@ -33,15 +32,15 @@ const customConfig: ShareButtonsConfig = {
     InviteFriendsComponent,
   ],
   imports: [
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
     FontAwesomeModule,
     ShareIconsModule,
     BrowserModule,
     HttpClientModule,
     ShareButtonsModule.withConfig(customConfig),
-    AngularFirestoreModule,
     BrowserAnimationsModule,
     NgMaterialModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
     RouterModule.forRoot(
       [
         { path: "", component: HomeComponent, pathMatch: "full" },
